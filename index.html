@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="materialsymbols.css" />
+
+  <meta name="viewport" content="width=device-width">
+  <title></title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="three-dots.css" rel="stylesheet" type="text/css" />
+  <link href="popups.css" rel="stylesheet" type="text/css" />
+
+
+  <script src="sweetalert.js"></script>
+  <title>Teecue</title>
+</head>
+
+<body>
+  <img src="logo.png" alt="Teecue" style="top: 0px;width: 150px;display: block;margin: auto;">
+  <div class="sidenav">
+    
+    <a href="#" style="font-size: 12px; color: rgb(25,25,25);">
+<span class="material-symbols-outlined">
+    chat
+    </span>
+<br>
+Chat
+</a>
+<br>
+
+          <a href="#" style="font-size: 12px; color: rgb(25,25,25);" onclick="har();">
+<span class="material-symbols-outlined">
+    support
+    </span>
+<br>
+Help & Resources
+</a>
+<br>
+ 
+        <a href="#" style="font-size: 12px; color: rgb(25,25,25);" onclick="emergency();">
+<span class="material-symbols-outlined">
+    emergency
+    </span>
+<br>
+Emergency
+</a>
+<br>
+    <a href="#" style="font-size: 12px; color: rgb(25,25,25);" onclick="dat();">
+      <span class="material-symbols-outlined">
+      info
+      </span>
+    <br>
+    Disclaimers and Terms
+    </a>
+    <br>
+    <a href="#" style="font-size: 12px; color: rgb(25,25,25);" onclick="dch();">
+      <span class="material-symbols-outlined">
+      delete_forever
+      </span>
+    <br>
+    Clear Chat History
+    </a>
+    <br>
+        <a href="#" style="font-size: 12px; color: rgb(25,25,25);" onclick="rai();">
+<span class="material-symbols-outlined">
+    flag
+    </span>
+<br>
+Report an Issue
+</a>
+<br>
+
+  </div>
+  <div class="main" style="margin-bottom: 95px;">
+    
+      </div><footer style="display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;"><div id="textbox" style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #C0D6DF;
+      width: 80%;
+      height: 50px;
+      position: fixed;
+      bottom: 20px;
+      border-radius: 50px;
+    "><input style="border: none;width: calc(80% - 20px);background: transparent;left: 20px;position: relative;height: 50px;font-family: 'Montserrat';font-weight: 900;outline: none;" placeholder="Just want to talk about something?" id="chatinput"><button style="
+      height: 50px;
+      width: 50px;
+      background: #5cb9df;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    " id="send"><span class="material-symbols-outlined">
+    send
+    </span></button></div>
+      
+    </footer>
+    <div id="myModal" class="modal" style="display: none;">
+
+      <!-- Modal content -->
+      <div class="modal-content" style="padding: 50px;">
+          <span class="material-symbols-outlined" style="color: #ff0000; margin-left: 50%; margin-right: 50%; display: block;">emergency</span>
+          <h2 style="font-weight: 700; text-align: center;">You're not alone, and help is available.</h2>
+          <p>If you're in distress or need someone to talk to, please consider reaching out to a crisis helpline. These trained professionals are here to provide support and guidance.</p>
+          <p>If you're facing an emergency and need immediate assistance from police, firefighters, or an ambulance, call 9-1-1 or head to the nearest emergency department. This is especially crucial if:</p>
+          <ul>
+              <li>You've recently attempted to seriously harm yourself or end your life.</li>
+              <li>You're planning to harm yourself imminently.</li>
+              <li>You're with someone who has harmed themselves or attempted suicide.</li>
+              <li>You believe you're at risk of hurting someone else.</li>
+          </ul>
+          <p></p>
+  
+          <a style="display: flex;align-items: center;justify-content: center;text-decoration: none;float:left;" href="tel:911" class="close"><span class="material-symbols-outlined" style="margin-right: 5px;">e911_emergency</span>Call 911 Now</a>
+  
+          <span class="close" style="float: right;" onclick="emergencycancel();">Cancel</span>
+      </div>
+  
+  </div>
+
+
+  <div id="myModal2" class="modal" style="display: none;">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="padding: 50px;">
+        <span class="material-symbols-outlined" style="color: #000000; margin-left: 50%; margin-right: 50%; display: block;">support</span>
+        <h2 style="font-weight: 700; text-align: center;">Help and Resources</h2>
+        <iframe src="https://findahelpline.com/" style="
+  display: block;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  border: none;
+  border-radius: 5px;
+  "></iframe>
+        <br>
+        <!-- Centered powered by line -->
+        <div style="text-align: center;">
+            <p style="font-weight: 700; color: grey; display: inline;">Powered By </p>
+            <a href="https://findahelpline.com" target="_blank" style="display: inline; color: grey;">find a helpline</a>
+        </div>
+  
+        <p onclick="harcancel();" class="close" style="text-align: center;">Done</span>
+    </div>
+  </div>
+  
+
+</div>
+
+<div id="myModal3" class="modal" style="display: none;">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="padding: 50px;">
+      <span class="material-symbols-outlined" style="color: #000000; margin-left: 50%; margin-right: 50%; display: block;">info</span>
+      <h2 style="font-weight: 700; text-align: center;">Disclaimers and Terms</h2>
+      <iframe src="terms.html" style="
+display: block;
+margin: auto;
+width: 500px;
+height: 500px;
+border: none;
+border-radius: 5px;
+"></iframe>
+      <br>
+      <!-- Centered powered by line -->
+      <div style="text-align: center;">
+          <p style="font-weight: 700; color: grey; display: inline;">Teecue AI is not intended to be a replacement for talking to a mental professional. Please consult a mental professional if needed</p>
+          
+      </div>
+
+      <p onclick="datcancel();" class="close" style="text-align: center;">Done
+  </p></div>
+</div>
+
+<div id="myModal4" class="modal" style="display: none;">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="padding: 50px;">
+      <span class="material-symbols-outlined" style="color: #000000; margin-left: 50%; margin-right: 50%; display: block;">delete_forever</span>
+      <h2 style="font-weight: 700; text-align: center;">Delete Chat History</h2>
+      
+      <br>
+      <!-- Centered powered by line -->
+      <div style="text-align: center;">
+          <p style="display: inline;">All of your conversations to our AI will be deleted forever. We cannot view your chats with our AI.</p>
+          
+      </div>
+
+      <p class="close" style="float: right;" onclick="dchcancel();">Cancel</p><p onclick="window.location.reload();" class="close" style="float: left;">Delete Chat History</p></div>
+</div>
+
+<div id="myModal5" class="modal" style="display: none;">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="padding: 50px;">
+      <span class="material-symbols-outlined" style="color: #000000; margin-left: 50%; margin-right: 50%; display: block;">flag</span>
+      <h2 style="font-weight: 700; text-align: center;">Report an Issue</h2>
+      
+      <br>
+      <!-- Centered powered by line -->
+      <div style="text-align: center;">
+          <p style="display: inline;">Please tell us what went wrong</p><br><br><div style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #C0D6DF;
+      height: 50px;
+      border-radius: 50px;
+    "><input style="border: none;width: 100%;background: transparent;left: 20px;position: relative;height: 50px;font-family: 'Montserrat';font-weight: 900;outline: none;" placeholder="Describe in detail what happened. Your response is anonymous" id="chatinput"></div>
+
+          
+      </div>
+
+      <p class="close" style="float: right;" onclick="raicancel();">Cancel</p><p onclick="raicancel();" class="close" style="float: left;">Send</p></div>
+</div>
+  <script type="module" src="script.js"></script>
+  <script src="popups.js"></script>
+  </script>
+</body>
+
+</html>

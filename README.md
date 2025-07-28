@@ -18,6 +18,7 @@ operable program or batch file.``, please try restarting your computer or reinst
 ## ⚠️ Disclaimer
 
 ⚠️ Teecue AI is **not intended** to be a replacement for talking to a mental professional. **Please consult a mental professional if needed.**
+
 ⚠️ Teecue AI may also have a **longer response time on lower end computers.**
 
 If you're in distress or need someone to talk to, please consider reaching out to a crisis helpline. These trained professionals are here to provide support and guidance.
